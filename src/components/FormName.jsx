@@ -1,3 +1,5 @@
+import "./AddName.css";
+
 const dialog = {
   width: "100%",
   height: "100%",
@@ -6,8 +8,8 @@ const dialog = {
 };
 
 const content = {
-  height: "50%",
-  width: "30%",
+  height: "40%",
+  width: "40%",
   position: "fixed",
   top: "5%",
   left: "50%",
@@ -27,7 +29,7 @@ export const FormName = ({ children, onOpen, onClose }) => {
       ></button>
       <div className="bg-dark rounded-4" style={content}>
         <div className="text-end p-2">
-          <button className="border-0 bg-dark float-end pe-2" onClick={onClose}>
+          <button className="border-0 bg-dark float-end pe-2 send" onClick={onClose}>
             <img src="https://img.icons8.com/?size=30&id=13107&format=png" />
           </button>
         </div>
@@ -36,3 +38,4 @@ export const FormName = ({ children, onOpen, onClose }) => {
     </dialog>
   );
 };
+
