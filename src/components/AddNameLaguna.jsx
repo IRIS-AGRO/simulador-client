@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-export const AddNameLaguna = ({ onCloseForm }) => {
+export const AddNameLaguna = ({ onCloseForm, onModify }) => {
   const [nuevoNombre, setNuevoNombre] = useState("");
 
   const handleInputChange = (event) => {
@@ -28,10 +28,11 @@ export const AddNameLaguna = ({ onCloseForm }) => {
           name="nombre"
           value={nuevoNombre}
           onChange={handleInputChange}
-          required
         />
         <br />
-        <button type="submit">Enviar</button>
+        <button type="submit" onClick={() => onModify(nuevoNombre)}>
+          Enviar
+        </button>
       </form>
     </div>
   );

@@ -44,6 +44,10 @@ function App() {
 
   //console.log(lagunas)
 
+  const handleModifyName = (name) =>{
+    create(name)
+  }
+
   const handleClick = () => {
     setOpenForm(true);
   };
@@ -61,7 +65,7 @@ function App() {
         <Aireadores lagunaId={actualId}></Aireadores>
       </Dialog>
       <FormName onOpen={openForm} onClose={handleClose}>
-        <AddNameLaguna onCloseForm={setOpenForm}></AddNameLaguna>
+        <AddNameLaguna onCloseForm={setOpenForm} onModify={handleModifyName}></AddNameLaguna>
       </FormName>
       {lagunas.map((laguna) => (
         <Laguna
