@@ -61,7 +61,7 @@ function App() {
         <Aireadores lagunaId={actualId}></Aireadores>
       </Dialog>
       <FormName onOpen={openForm} onClose={handleClose}>
-        <AddNameLaguna></AddNameLaguna>
+        <AddNameLaguna onCloseForm={setOpenForm}></AddNameLaguna>
       </FormName>
       {lagunas.map((laguna) => (
         <Laguna
