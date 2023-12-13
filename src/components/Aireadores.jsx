@@ -23,7 +23,7 @@ export const Aireadores = ({ lagunaId }) => {
   return (
     <div className='p-5 row'>
       <div className='col-6'>
-        <h1 className='text-white mb-0 fs-2'>Laguna {lagunaId}</h1>
+        <h1 className='text-white mb-0 fs-2'>Laguna  {lagunaId} | {laguna.name}</h1>
         <p className='text-secondary'>Aireadores</p>
       </div>
       <div className='col-6 text-end text-white lightbtn'>

@@ -23,8 +23,10 @@ export const useLagunasStore = create((put, get) => {
                   )
                 : [];
 
+
               return {
                 id: lagunaId,
+                name:lagunaData.name,
                 aireadores: aireadoresArray,
                 od: lagunaData.od || 0,
                 orp: lagunaData.orp || 0,
@@ -37,21 +39,15 @@ export const useLagunasStore = create((put, get) => {
       });
     },
     createEmptyLaguna: async (name) => {
-      if (name !== "") {
-        lagunasRef._path.pieces_.push(name);
-      }
-      console.log(lagunasRef._path.pieces_.length);
-
       const newLagunaRef = push(lagunasRef);
       const newLagunaId = newLagunaRef.key;
 
       const emptyLaguna = {
+        name:name,
         od: 0,
         orp: 0,
       };
-      if (lagunasRef._path.pieces_.length === 2) {
-        lagunasRef._path.pieces_.pop();
-      }
+
       put({ lagunas: [...get().lagunas, { id: newLagunaId, ...emptyLaguna }] });
       update(newLagunaRef, emptyLaguna);
     },

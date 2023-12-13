@@ -70,6 +70,7 @@ function App() {
       {lagunas.map((laguna) => (
         <Laguna
           id={laguna.id}
+          name={laguna.name}
           od={laguna.od}
           orp={laguna.orp}
           airs={laguna.aireadores.length}
